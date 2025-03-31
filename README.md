@@ -4,7 +4,7 @@ Projet réalisé lors de mes cours, il s'agit d'un site web développé avec Sym
 # Pour utiliser le projet 
 cloner le projet dans votre fichier souhaitez.
 puis aller dans le fichier avec "cd".
-
+Installer préalablement composer : https://getcomposer.org/download/
 enfin installer les dépandances avec "composer install".
 
 # Utilisation de la base de donnée 
