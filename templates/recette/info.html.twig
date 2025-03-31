@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recette-{{ recette.name }}{% endblock %}
+
+{% block body %}
+
+<h1>Recette : {{ recette.name }}</h1>
+ <div class="info">
+
+    {% if recette.file %}
+    <img src="{{ asset('uploads/' ~ recette.file) }}" class="img-size" >
+    {% else %}
+        <p> Il n'y a pas d'image</p>
+    {% endif %}
+    
+    <div class="content-recette">
+        <p>{{ recette.content }}</p>
+        <p>Temps de cuisson : {{ recette.duration }}</p>
+</div>
+
+<div>
+     {% for com in commentaires%}
+     <div>
+          <small>{{com.createAt|date('d/m/Y H:i')}}</small>
+          <p>{{com.commentaires}}</p>
+          {% if com.user%}
+          <small>{{com.user.username}}</small>
+          {% else %}
+          <p>Anonymous<p>
+          {% endif %}
+     </div>
+     
+     {% endfor %}
+</div>
+<div>
+     {{note}}
+</div>
+<div>
+     {{form(form)}}
+     <a href="{{path('note.index', { 'id': recette.id })}}" class="btn btn-lg btn-primary">Mettre une note </a>
+</div>
+{% endblock %}

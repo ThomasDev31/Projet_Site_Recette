@@ -1,0 +1,8 @@
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="container-btn-new">
+            <button type="submit" id="" class="btn btn-primary" type="button" value="Save">Valider</button>
+            <a href="{{ path('recette.userId', { 'userId': app.user.id }) }}" class="btn btn-lg btn-primary">back to list</a>
+        </div>
+    {{ form_end(form) }}
